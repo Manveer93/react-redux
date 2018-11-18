@@ -1,5 +1,6 @@
 import React from 'react';
-// import connect now we can connect store with our component(Man).but now it is not working.
+// import connect now we can connect store with our component(Man) or sometimes with specific component.
+//but now it is not working.
 //huh pta ni kithe glti ho gyi.chl peya component de bahr ni rkheya c mapStateToProps nu.
 import { connect } from 'react-redux';
 //import textHandling here otherwise it will give error as textHandling is not defined.
@@ -12,15 +13,16 @@ class First extends React.Component {
     
 
     render() {
-    
+    console.log(this.props.text);
         return(
             //ethe appa onchange function lgana tn k state ch koi v change aye tn ohdi appa nu info rhe.
             //here e is event means jo v appa type krage.
         <div>
             <h2>Manveer Singh Bhatoye</h2>
-            <input value={this.props.text} type="text" onChange={(e)=>{this.handleChange(e)}}/>
+            <input value={this.props.text} type="text"
+             onChange={(e)=>{this.handleChange(e)}}/><br/><br/>
         <div>
-            {this.props.text}
+           <input value={this.props.text}></input>
         </div>
         </div>
         );
